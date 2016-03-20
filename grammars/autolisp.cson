@@ -1,0 +1,87 @@
+'comment': ''
+'fileTypes': [
+  'lsp'
+]
+'name': 'Autolisp'
+'patterns': [
+  {
+    'begin': '(^[ \\t]+)?(?=;)'
+    'beginCaptures':
+      '1':
+        'name': 'punctuation.whitespace.comment.leading.autolisp'
+    'end': '(?!\\G)'
+    'patterns': [
+      {
+        'begin': ';'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.autolisp'
+        'end': '\\n'
+        'name': 'comment.line.semicolon.autolisp'
+      }
+    ]
+  }
+  {
+    'captures':
+      '2':
+        'name': 'storage.type.function-type.autolisp'
+      '4':
+        'name': 'entity.name.function.autolisp'
+    'match': '(\\b(?i:(defun|defmethod|defmacro))\\b)(\\s+)((\\w|\\-|\\!|\\?)*)'
+    'name': 'meta.function.autolisp'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.definition.constant.autolisp'
+    'match': '(#)(\\w|[\\\\+-=<>\'"&#])+'
+    'name': 'constant.character.autolisp'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'punctuation.definition.variable.autolisp'
+      '3':
+        'name': 'punctuation.definition.variable.autolisp'
+    'match': '(\\*)(\\S*)(\\*)'
+    'name': 'variable.other.global.autolisp'
+  }
+  {
+    'match': '\\b(?i:case|do|let|loop|if|else|when)\\b'
+    'name': 'keyword.control.autolisp'
+  }
+  {
+    'match': '\\b(?i:eq|neq|and|or)\\b'
+    'name': 'keyword.operator.autolisp'
+  }
+  {
+    'match': '\\b(?i:null|nil)\\b'
+    'name': 'constant.language.autolisp'
+  }
+  {
+    'match': '\\b(?i:cons|car|cdr|cond|lambda|format|setq|setf|quote|eval|append|list|listp|memberp|t|load|progn)\\b'
+    'name': 'support.function.autolisp'
+  }
+  {
+    'match': '\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b'
+    'name': 'constant.numeric.autolisp'
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.autolisp'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.autolisp'
+    'name': 'string.quoted.double.autolisp'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escape.autolisp'
+      }
+    ]
+  }
+]
+'scopeName': 'source.autolisp'

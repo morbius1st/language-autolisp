@@ -1,0 +1,14 @@
+{
+  "name": "language-autolisp",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Autolisp support for Atom (converted from Lisp language package)",
+  "keywords": [
+    "language",
+    "grammar"
+  ],
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
